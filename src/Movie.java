@@ -3,7 +3,6 @@ public class Movie {
     private String code;
 
     public Movie(String title, String code) {
-
         this.title = title;
         this.code = code;
     }
