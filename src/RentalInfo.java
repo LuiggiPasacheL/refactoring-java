@@ -5,10 +5,10 @@ public class RentalInfo {
 
     public String statement(Customer customer) {
         HashMap<String, Movie> movies = new HashMap();
-        movies.put("F001", new Movie("You've Got Mail", "regular"));
-        movies.put("F002", new Movie("Matrix", "regular"));
-        movies.put("F003", new Movie("Cars", "childrens"));
-        movies.put("F004", new Movie("Fast & Furious X", "new"));
+        movies.put("F001", new Movie("You've Got Mail", Code.REGULAR));
+        movies.put("F002", new Movie("Matrix", Code.REGULAR));
+        movies.put("F003", new Movie("Cars", Code.CHILDRENDS));
+        movies.put("F004", new Movie("Fast & Furious X", Code.NEW));
 
         double totalAmount = 0;
         int frequentEnterPoints = 0;
@@ -19,7 +19,7 @@ public class RentalInfo {
             //add frequent bonus points
             frequentEnterPoints++;
             // add bonus for a two day new release rental
-            if (movies.get(r.getMovieId()).getCode() == "new" && r.getDays() > 2) {
+            if (movies.get(r.getMovieId()).getCode().equals(Code.NEW) && r.getDays() > 2) {
                 frequentEnterPoints++;
             }
 

@@ -23,16 +23,16 @@ public class MovieRental {
         double thisAmount = 0;
 
         // determine amount for each movie
-        if (movies.get(getMovieId()).getCode().equals("regular")) {
+        if (movies.get(getMovieId()).getCode().equals(Code.REGULAR)) {
             thisAmount = 2;
             if (getDays() > 2) {
                 thisAmount = ((getDays() - 2) * 1.5) + thisAmount;
             }
         }
-        if (movies.get(getMovieId()).getCode().equals("new")) {
+        if (movies.get(getMovieId()).getCode().equals(Code.NEW)) {
             thisAmount = getDays() * 3;
         }
-        if (movies.get(getMovieId()).getCode().equals("childrens")) {
+        if (movies.get(getMovieId()).getCode().equals(Code.CHILDRENDS)) {
             thisAmount = 1.5;
             if (getDays() > 3) {
                 thisAmount = ((getDays() - 3) * 1.5) + thisAmount;
